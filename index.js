@@ -4,12 +4,19 @@ import cors from 'cors';
 import beritaRoutes from "./routes/beritas-routes.js";
 import userRoutes from "./routes/users-routes.js";
 
+import './models/index.js';
+
+import { startSequelize } from './utils/startSequelize.js';
 
 const app = express();
 const port = 3000;
 
+startSequelize();
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+app.use(express.static("public"));
 
 app.use(cors());
 
