@@ -1,4 +1,5 @@
 import express from 'express';
+import { createUser, readUser } from "../services/Users-services.js"
 import { users } from "../constants/users.js";
 
 /**
@@ -7,11 +8,10 @@ import { users } from "../constants/users.js";
  * @param {express.Response} response 
  */
 
-export const getUsers = (request, response) => {
+export const getUsers = async (request, response) => {
+    const userList = await readUser();
     response.json({
-        nama: "Jonatan Hutahaean",
-        email: "jonatanhutahean03@gmail.com",
-        password: "asiap123",
+        data: userList,
     });
 };
 
@@ -21,19 +21,10 @@ export const getUsers = (request, response) => {
  * @param {express.Response} response 
  */
 
-export const getUsersById = (request, response) => {
-    // Query Parameter
-    const userId = request.query.userId;
-    const userData = users[userId];
+export const postUserItem = async (request, response) => {
+    const { nama, email, password } = request.body;
 
-    if (!userData){
-        response.status(404).json({
-            message: "Data not found",
-        });
-        return;
-    }
+    const user = await createUser(nama, email, password);
 
-    response.json({
-        users: users[userId],
-    });
+    response.json(user);
 };

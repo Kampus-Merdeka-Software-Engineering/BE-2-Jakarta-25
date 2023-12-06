@@ -1,5 +1,11 @@
 import { Beritas } from "../models/index.js";
 
+export const getBeritaById = async (beritaId) => {
+  return await Beritas.findOne({
+    where: { id: beritaId },
+  });
+};
+
 export const readBerita = async () => {
     return await Beritas.findAll();
 };

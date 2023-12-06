@@ -1,5 +1,33 @@
 import express from "express";
-import { createBerita, readBerita } from "../services/Beritas.js";
+import { createBerita, getBeritaById, readBerita } from "../services/Beritas-services.js";
+
+/**
+ * 
+ * @param {express.Request} request 
+ * @param {express.Response} response 
+ */
+
+export const getBeritaItem = async (request, response) => {
+    const id = request.params.id;
+
+    const berita = await getBeritaById(id);
+
+    if(berita === null) {
+        return response.status(404).json({
+            message: "Data not Found",
+        });
+    }
+
+    response.status(200).json({
+        data: berita,
+    });
+};
+
+/**
+ * 
+ * @param {express.Request} request 
+ * @param {express.Response} response 
+ */
 
 export const getBeritas = async (request, response) => {
     const beritaList = await readBerita();
