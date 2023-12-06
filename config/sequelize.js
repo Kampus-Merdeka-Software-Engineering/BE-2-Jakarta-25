@@ -1,5 +1,8 @@
+import dotenv from "dotenv";
 import { Sequelize } from 'sequelize';
 
-const sequelize = new Sequelize("mysql://root@localhost:3306/starnews");
+dotenv.config();
+
+const sequelize = new Sequelize(process.env.MYSQL_URL);
 
 export default sequelize;
