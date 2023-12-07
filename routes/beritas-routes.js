@@ -4,7 +4,7 @@ import { getBeritaItem, getBeritas, getBeritaTerbaru, postBeritaItem } from "../
 const router = express.Router();
 
 router.get("/", getBeritas);
-// router.get('/terbaru', getBeritaTerbaru);
+router.get('/terbaru', getBeritaTerbaru);
 router.post('/create', postBeritaItem);
 router.get("/:id", getBeritaItem);
 
