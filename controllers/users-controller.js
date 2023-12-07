@@ -1,6 +1,5 @@
 import express from 'express';
 import { createUser } from "../services/Users-services.js"
-import { users } from "../constants/users.js";
 
 /**
  * 
