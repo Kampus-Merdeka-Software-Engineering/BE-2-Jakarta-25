@@ -1,5 +1,5 @@
 import express, { request, response } from "express";
-import { createBerita, getBeritaByDate, getBeritaById, getTeknologi3, readBerita } from "../services/Beritas-services.js";
+import { createBerita, getBeritaByDate, getBeritaById, getEkonomi3, getTeknologi3, readBerita } from "../services/Beritas-services.js";
 
 /**
  * 
