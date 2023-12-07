@@ -7,6 +7,23 @@ import { createBerita, getBeritaByDate, getBeritaById, getTeknologi3, readBerita
  * @param {express.Response} response 
  */
 
+export const getBeritaEkonomiHome = async (request, response) => {
+    const beritaEkonomi = await getEkonomi3();
+
+    console.log({ beritaEkonomi });
+
+    response.status(200).json({
+        data: beritaEkonomi,
+        message: "Sukses mengambil data berita",
+    });
+};
+
+/**
+ * 
+ * @param {express.Request} request 
+ * @param {express.Response} response 
+ */
+
 export const getBeritaTeknologiHome = async (request, response) => {
     const beritaTeknologi = await getTeknologi3();
 
