@@ -1,5 +1,73 @@
 import express, { request, response } from "express";
-import { createBerita, getBeritaByDate, getBeritaById, getEkonomi3, getOlahraga3, getOtomotif3, getTeknologi3, readBerita } from "../services/Beritas-services.js";
+import { createBerita, getBeritaByDate, getBeritaById, getEdukasi3, getEkonomi3, getGayahidup3, getHiburan3, getOlahraga3, getOtomotif3, getPolitik3, getTeknologi3, readBerita } from "../services/Beritas-services.js";
+
+/**
+ * 
+ * @param {express.Request} request 
+ * @param {express.Response} response 
+ */
+
+export const getBeritaHiburanHome = async (request, response) => {
+    const beritaHiburan = await getHiburan3();
+
+    console.log({ beritaHiburan });
+
+    response.status(200).json({
+        data: beritaHiburan,
+        message: "Sukses mengambil data berita",
+    });
+};
+
+/**
+ * 
+ * @param {express.Request} request 
+ * @param {express.Response} response 
+ */
+
+export const getBeritaEdukasiHome = async (request, response) => {
+    const beritaEdukasi = await getEdukasi3();
+
+    console.log({ beritaEdukasi });
+
+    response.status(200).json({
+        data: beritaEdukasi,
+        message: "Sukses mengambil data berita",
+    });
+};
+
+/**
+ * 
+ * @param {express.Request} request 
+ * @param {express.Response} response 
+ */
+
+export const getBeritaGayahidupHome = async (request, response) => {
+    const beritaGayahidup = await getGayahidup3();
+
+    console.log({ beritaGayahidup });
+
+    response.status(200).json({
+        data: beritaGayahidup,
+        message: "Sukses mengambil data berita",
+    });
+};
+
+/**
+ * 
+ * @param {express.Request} request 
+ * @param {express.Response} response 
+ */
+
+export const getBeritaPolitikHome = async (request, response) => {
+    const beritaPolitik = await getPolitik3();
+
+    console.log({ beritaPolitik });
+
+    response.status(200).json({
+        data: beritaPolitik,
+        message: "Sukses mengambil data berita",
+    });
+};
 
 /**
  * 
