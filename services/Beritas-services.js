@@ -1,5 +1,15 @@
 import { Beritas } from "../models/index.js";
 
+export const getTeknologi3 = async () => {
+  return await Beritas.findAll({
+    where: {
+      kategori: 'Teknologi',
+    },
+    order: [['publish_date', 'DESC']],
+    limit: 3,
+  });
+};
+
 export const getBeritaByDate = async () => {
   return await Beritas.findAll({
     order: [['publish_date', 'DESC']],
