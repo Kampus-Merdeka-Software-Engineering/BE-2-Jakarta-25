@@ -1,5 +1,15 @@
 import { Beritas } from "../models/index.js";
 
+export const getOlahraga3 = async () => {
+  return await Beritas.findAll({
+    where: {
+      kategori: 'Olahraga',
+    },
+    order: [['publish_date', 'DESC']],
+    limit: 3,
+  });
+};
+
 export const getOtomotif3 = async () => {
   return await Beritas.findAll({
     where: {

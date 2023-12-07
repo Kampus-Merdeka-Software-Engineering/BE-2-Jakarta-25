@@ -1,5 +1,22 @@
 import express, { request, response } from "express";
-import { createBerita, getBeritaByDate, getBeritaById, getEkonomi3, getOtomotif3, getTeknologi3, readBerita } from "../services/Beritas-services.js";
+import { createBerita, getBeritaByDate, getBeritaById, getEkonomi3, getOlahraga3, getOtomotif3, getTeknologi3, readBerita } from "../services/Beritas-services.js";
+
+/**
+ * 
+ * @param {express.Request} request 
+ * @param {express.Response} response 
+ */
+
+export const getBeritaOlahragaHome = async (request, response) => {
+    const beritaOlahraga = await getOlahraga3();
+
+    console.log({ beritaOlahraga });
+
+    response.status(200).json({
+        data: beritaOlahraga,
+        message: "Sukses mengambil data berita",
+    });
+};
 
 /**
  * 
