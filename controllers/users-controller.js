@@ -1,19 +1,6 @@
 import express from 'express';
-import { createUser, readUser } from "../services/Users-services.js"
+import { createUser } from "../services/Users-services.js"
 import { users } from "../constants/users.js";
-
-/**
- * 
- * @param {express.Request} request 
- * @param {express.Response} response 
- */
-
-export const getUsers = async (request, response) => {
-    const userList = await readUser();
-    response.json({
-        data: userList,
-    });
-};
 
 /**
  * 
