@@ -1,5 +1,26 @@
-import express from "express";
-import { createBerita, getBeritaById, readBerita } from "../services/Beritas-services.js";
+import express, { request, response } from "express";
+import { createBerita, getBeritaByDate, getBeritaById, readBerita } from "../services/Beritas-services.js";
+
+/**
+ * 
+ * @param {express.Request} request 
+ * @param {express.Response} response 
+ */
+
+export const getBeritaTerbaru = async (request, response) => {
+    const beritaTerbaru = await getBeritaByDate();
+
+    if (beritaTerbaru.length > 0) {
+        response.status(200).json({
+            message: 'Success',
+            data:beritaTerbaru,
+        });
+    } else {
+        response.status(404).json({
+            message: 'Berita tidak ditemukan',
+        });
+    }
+};
 
 /**
  * 
