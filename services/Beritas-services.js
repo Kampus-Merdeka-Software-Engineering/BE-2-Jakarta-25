@@ -9,6 +9,13 @@ export const getTeknologi = async () => {
   });
 };
 
+export const getBeritaByPublish5 = async () => {
+  return await Beritas.findAll({
+    order: [['publish_date', 'ASC']],
+    limit: 5,
+  });
+};
+
 export const getBeritaByPublish = async () => {
   return await Beritas.findAll({
     order: [['publish_date', 'ASC']],

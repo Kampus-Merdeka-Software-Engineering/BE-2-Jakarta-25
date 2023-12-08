@@ -1,5 +1,26 @@
 import express, { request, response } from "express";
-import { createBerita, getBeritaByDate, getBeritaById, getBeritaByPublish, getEdukasi3, getEkonomi3, getGayahidup3, getHiburan3, getOlahraga3, getOtomotif3, getPolitik3, getTeknologi, getTeknologi3, readBerita } from "../services/Beritas-services.js";
+import { createBerita, getBeritaByDate, getBeritaById, getBeritaByPublish, getBeritaByPublish5, getEdukasi3, getEkonomi3, getGayahidup3, getHiburan3, getOlahraga3, getOtomotif3, getPolitik3, getTeknologi, getTeknologi3, readBerita } from "../services/Beritas-services.js";
+
+/**
+ * 
+ * @param {express.Request} request 
+ * @param {express.Response} response 
+ */
+
+export const getBeritaTerlama5 = async (request, response) => {
+    const beritaTerlama = await getBeritaByPublish5();
+
+    if (beritaTerlama.length > 0) {
+        response.status(200).json({
+            message: 'Success',
+            data:beritaTerlama,
+        });
+    } else {
+        response.status(404).json({
+            message: 'Berita tidak ditemukan',
+        });
+    }
+};
 
 /**
  * 
