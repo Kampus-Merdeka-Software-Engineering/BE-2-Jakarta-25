@@ -1,5 +1,12 @@
 import { Beritas } from "../models/index.js";
 
+export const getBeritaByPublish = async () => {
+  return await Beritas.findAll({
+    order: [['publish_date', 'ASC']],
+    limit: 10,
+  });
+};
+
 export const getHiburan3 = async () => {
   return await Beritas.findAll({
     where: {
