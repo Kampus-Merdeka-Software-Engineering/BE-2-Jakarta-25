@@ -3,7 +3,7 @@ import { Beritas } from "../models/index.js";
 export const getBeritaByPublish = async () => {
   return await Beritas.findAll({
     order: [['publish_date', 'ASC']],
-    limit: 12,
+    limit: 15,
   });
 };
 
