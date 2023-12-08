@@ -23,7 +23,7 @@ export const getEdukasi3 = async () => {
 export const getGayahidup3 = async () => {
   return await Beritas.findAll({
     where: {
-      kategori: 'Gayahidup',
+      kategori: 'Gaya Hidup',
     },
     order: [['publish_date', 'DESC']],
     limit: 3,
