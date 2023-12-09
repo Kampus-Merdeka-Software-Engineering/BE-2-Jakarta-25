@@ -1,5 +1,68 @@
 import { Beritas } from "../models/index.js";
 
+export const getHiburan = async () => {
+  return await Beritas.findAll({
+    where: {
+      kategori: 'Hiburan',
+    },
+    order: [['publish_date', 'DESC']],
+  });
+};
+
+export const getEdukasi = async () => {
+  return await Beritas.findAll({
+    where: {
+      kategori: 'Edukasi',
+    },
+    order: [['publish_date', 'DESC']],
+  });
+};
+
+export const getGayahidup = async () => {
+  return await Beritas.findAll({
+    where: {
+      kategori: 'Gaya Hidup',
+    },
+    order: [['publish_date', 'DESC']],
+  });
+};
+
+export const getPolitik = async () => {
+  return await Beritas.findAll({
+    where: {
+      kategori: 'Politik',
+    },
+    order: [['publish_date', 'DESC']],
+  });
+};
+
+export const getOlahraga = async () => {
+  return await Beritas.findAll({
+    where: {
+      kategori: 'Olahraga',
+    },
+    order: [['publish_date', 'DESC']],
+  });
+};
+
+export const getOtomotif = async () => {
+  return await Beritas.findAll({
+    where: {
+      kategori: 'Otomotif',
+    },
+    order: [['publish_date', 'DESC']],
+  });
+};
+
+export const getEkonomi = async () => {
+  return await Beritas.findAll({
+    where: {
+      kategori: 'Ekonomi',
+    },
+    order: [['publish_date', 'DESC']],
+  });
+};
+
 export const getTeknologi = async () => {
   return await Beritas.findAll({
     where: {

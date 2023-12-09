@@ -1,5 +1,124 @@
 import express, { request, response } from "express";
-import { createBerita, getBeritaByDate, getBeritaById, getBeritaByPublish, getBeritaByPublish5, getEdukasi3, getEkonomi3, getGayahidup3, getHiburan3, getOlahraga3, getOtomotif3, getPolitik3, getTeknologi, getTeknologi3, readBerita } from "../services/Beritas-services.js";
+import { createBerita, getBeritaByDate, getBeritaById, getBeritaByPublish, getBeritaByPublish5, getEdukasi, getEdukasi3, getEkonomi, getEkonomi3, getGayahidup, getGayahidup3, getHiburan, getHiburan3, getOlahraga, getOlahraga3, getOtomotif, getOtomotif3, getPolitik, getPolitik3, getTeknologi, getTeknologi3, readBerita } from "../services/Beritas-services.js";
+
+/**
+ * 
+ * @param {express.Request} request 
+ * @param {express.Response} response 
+ */
+
+export const getBeritaHiburanPage = async (request, response) => {
+    const beritaHiburan = await getHiburan();
+
+    console.log({ beritaHiburan });
+
+    response.status(200).json({
+        data: beritaHiburan,
+        message: "Sukses mengambil data berita",
+    });
+};
+
+/**
+ * 
+ * @param {express.Request} request 
+ * @param {express.Response} response 
+ */
+
+export const getBeritaEdukasiPage = async (request, response) => {
+    const beritaEdukasi = await getEdukasi();
+
+    console.log({ beritaEdukasi });
+
+    response.status(200).json({
+        data: beritaEdukasi,
+        message: "Sukses mengambil data berita",
+    });
+};
+
+/**
+ * 
+ * @param {express.Request} request 
+ * @param {express.Response} response 
+ */
+
+export const getBeritaGayahidupPage = async (request, response) => {
+    const beritaGayahidup = await getGayahidup();
+
+    console.log({ beritaGayahidup });
+
+    response.status(200).json({
+        data: beritaGayahidup,
+        message: "Sukses mengambil data berita",
+    });
+};
+
+/**
+ * 
+ * @param {express.Request} request 
+ * @param {express.Response} response 
+ */
+
+export const getBeritaPolitikPage = async (request, response) => {
+    const beritaPolitik = await getPolitik();
+
+    console.log({ beritaPolitik });
+
+    response.status(200).json({
+        data: beritaPolitik,
+        message: "Sukses mengambil data berita",
+    });
+};
+
+/**
+ * 
+ * @param {express.Request} request 
+ * @param {express.Response} response 
+ */
+
+export const getBeritaOlahragaPage = async (request, response) => {
+    const beritaOlahraga = await getOlahraga();
+
+    console.log({ beritaOlahraga });
+
+    response.status(200).json({
+        data: beritaOlahraga,
+        message: "Sukses mengambil data berita",
+    });
+};
+
+/**
+ * 
+ * @param {express.Request} request 
+ * @param {express.Response} response 
+ */
+
+export const getBeritaOtomotifPage = async (request, response) => {
+    const beritaOtomotif = await getOtomotif();
+
+    console.log({ beritaOtomotif });
+
+    response.status(200).json({
+        data: beritaOtomotif,
+        message: "Sukses mengambil data berita",
+    });
+};
+
+/**
+ * 
+ * @param {express.Request} request 
+ * @param {express.Response} response 
+ */
+
+export const getBeritaEkonomiPage = async (request, response) => {
+    const beritaEkonomi = await getEkonomi();
+
+    console.log({ beritaEkonomi });
+
+    response.status(200).json({
+        data: beritaEkonomi,
+        message: "Sukses mengambil data berita",
+    });
+};
 
 /**
  * 

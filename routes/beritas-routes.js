@@ -1,9 +1,16 @@
 import express, { request, response } from "express";
-import { getBeritaEdukasiHome, getBeritaEkonomiHome, getBeritaGayahidupHome, getBeritaHiburanHome, getBeritaItem, getBeritaOlahragaHome, getBeritaOtomotifHome, getBeritaPolitikHome, getBeritas, getBeritaTeknologiHome, getBeritaTeknologiPage, getBeritaTerbaru, getBeritaTerlama, getBeritaTerlama5, postBeritaItem } from "../controllers/beritas-controller.js";
+import { getBeritaEdukasiHome, getBeritaEdukasiPage, getBeritaEkonomiHome, getBeritaEkonomiPage, getBeritaGayahidupHome, getBeritaGayahidupPage, getBeritaHiburanHome, getBeritaHiburanPage, getBeritaItem, getBeritaOlahragaHome, getBeritaOlahragaPage, getBeritaOtomotifHome, getBeritaOtomotifPage, getBeritaPolitikHome, getBeritaPolitikPage, getBeritas, getBeritaTeknologiHome, getBeritaTeknologiPage, getBeritaTerbaru, getBeritaTerlama, getBeritaTerlama5, postBeritaItem } from "../controllers/beritas-controller.js";
 
 const router = express.Router();
 
 router.get("/", getBeritas);
+router.get('/hiburan', getBeritaHiburanPage);
+router.get('/edukasi', getBeritaEdukasiPage);
+router.get('/gayahidup', getBeritaGayahidupPage);
+router.get('/politik', getBeritaPolitikPage);
+router.get('/olahraga', getBeritaOlahragaPage);
+router.get('/otomotif', getBeritaOtomotifPage);
+router.get('/ekonomi', getBeritaEkonomiPage);
 router.get('/teknologi', getBeritaTeknologiPage);
 router.get('/terlama', getBeritaTerlama);
 router.get('/terlama/page', getBeritaTerlama5);
