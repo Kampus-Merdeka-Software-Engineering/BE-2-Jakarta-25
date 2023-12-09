@@ -1,5 +1,5 @@
 import express, { request, response } from "express";
-import { getBeritaEdukasiHome, getBeritaEdukasiPage, getBeritaEkonomiHome, getBeritaEkonomiPage, getBeritaGayahidupHome, getBeritaGayahidupPage, getBeritaHiburanHome, getBeritaHiburanPage, getBeritaItem, getBeritaOlahragaHome, getBeritaOlahragaPage, getBeritaOtomotifHome, getBeritaOtomotifPage, getBeritaPolitikHome, getBeritaPolitikPage, getBeritas, getBeritaTeknologiHome, getBeritaTeknologiPage, getBeritaTerbaru, getBeritaTerlama, getBeritaTerlama5, postBeritaItem } from "../controllers/beritas-controller.js";
+import { getBeritaEdukasiHome, getBeritaEdukasiPage, getBeritaEkonomiHome, getBeritaEkonomiPage, getBeritaGayahidupHome, getBeritaGayahidupPage, getBeritaHiburanHome, getBeritaHiburanPage, getBeritaItem, getBeritaJudul, getBeritaOlahragaHome, getBeritaOlahragaPage, getBeritaOtomotifHome, getBeritaOtomotifPage, getBeritaPolitikHome, getBeritaPolitikPage, getBeritas, getBeritaTeknologiHome, getBeritaTeknologiPage, getBeritaTerbaru, getBeritaTerlama, getBeritaTerlama5, postBeritaItem } from "../controllers/beritas-controller.js";
 
 const router = express.Router();
 
@@ -25,5 +25,6 @@ router.get('/edu',getBeritaEdukasiHome);
 router.get('/hibur',getBeritaHiburanHome);
 router.post('/create', postBeritaItem);
 router.get("/:id", getBeritaItem);
+router.get('/cari/:judul', getBeritaJudul);
 
 export default router;

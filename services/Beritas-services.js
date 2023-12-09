@@ -1,4 +1,15 @@
+import { Op } from 'sequelize';
 import { Beritas } from "../models/index.js";
+
+export const getBeritaByJudul = async (beritaJudul) => {
+  return await Beritas.findAll({
+    where: {
+      judul: {
+        [Op.like]: `%${beritaJudul}%`,
+      },
+    },
+  });
+};
 
 export const getHiburan = async () => {
   return await Beritas.findAll({
