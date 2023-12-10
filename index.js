@@ -2,8 +2,9 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import beritaRoutes from "./routes/beritas-routes.js";
-import userRoutes from "./routes/users-routes.js";
-import commentRoutes from "./routes/comments-routes.js";
+import saranRoutes from "./routes/sarans-routes.js";
+import testimoniRoutes from "./routes/testimonis-routes.js";
+
 
 import './models/index.js';
 
@@ -18,13 +19,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.raw());
 app.use(bodyParser.json());
 
-app.use(express.static("public"));
-
 app.use(cors());
 
 app.use("/berita", beritaRoutes);
-app.use("/users", userRoutes);
-app.use("/comments", commentRoutes);
+app.use("/saran", saranRoutes);
+app.use("/testimoni", testimoniRoutes);
+
 
 app.use((err, req, res, next) => {
     if (res.headersSent) {

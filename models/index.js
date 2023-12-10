@@ -1,6 +1,3 @@
 export { default as Beritas } from './beritas-models.js';
-export { default as Users } from './users-models.js';
-export { default as Comments } from './comments-models.js';
-
-
-import "./associations.js"
+export { default as Sarans } from './sarans-models.js';
+export { default as Testimonis } from './testimonis-models.js';
