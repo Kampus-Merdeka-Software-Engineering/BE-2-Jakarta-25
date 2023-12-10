@@ -4,12 +4,10 @@ export const readSaran = async () => {
     return await Sarans.findAll();
 };
 
-export const createSaran = async (nama, email, telp, testimoni, status) => {
+export const createSaran = async (nama, email, saran) => {
     return await Sarans.create({
         nama,
         email,
-        telp,
-        testimoni,
-        status,
+        saran,
     });
 };
